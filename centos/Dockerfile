@@ -9,7 +9,7 @@ RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backu
 
 RUN yum clean all && yum update -y && yum clean all
 
-ENV PIP_URL https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+ENV PIP_URL https://bootstrap.pypa.io/get-pip.py
 
 RUN curl -o /get-pip.py $PIP_URL && python /get-pip.py && rm /get-pip.py
 
