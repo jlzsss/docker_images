@@ -7,7 +7,7 @@ RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backu
          curl -o /etc/yum.repos.d/CentOS-Base.repo https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3
 # update
 RUN yum update -y && yum install -y wget git &&\
-        yum groupinstall "Development Tools" &&\
+        yum groupinstall -y "Development Tools" &&\
         yum clean all &&\
         echo 'Asia/Shanghai' > /etc/timezone
 
