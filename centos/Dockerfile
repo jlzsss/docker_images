@@ -1,6 +1,6 @@
 FROM centos:7
 
-MAINTAINER endoffight@gmail.com
+MAINTAINER LG <endoffight@gmail.com>
 
 # ustc
 ENV YUM_BOOST_URL https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3
@@ -11,7 +11,7 @@ ENV YUM_BOOST_URL https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup && \
         curl -o /etc/yum.repos.d/CentOS-Base.repo $YUM_BOOST_URL
 # update
-RUN yum clean all && yum update -y && yum clean all
+ONBUILD RUN yum update -y && yum clean all
 
 # pip
 ENV PIP_URL https://bootstrap.pypa.io/get-pip.py
