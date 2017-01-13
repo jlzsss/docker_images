@@ -8,10 +8,12 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list\
 
 RUN apt-get update -qq &&\
         apt-get -qqy upgrade &&\
-        apt-get install -qqy --no-install-recommends\
+        DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends\
+        # build-essential\
         ca-certificates\
         curl\
         wget\
+        git\
         python\
         apt-utils\
         dialog\
@@ -19,14 +21,12 @@ RUN apt-get update -qq &&\
         tzdata\
         unzip &&\
         apt-get clean &&\
-        rm -rf /var/lib/apt/lists/* &&\
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&\
         echo "Asia/Shanghai" > /etc/timezone &&\
         dpkg-reconfigure -f noninteractive tzdata &&\
         echo 'alias ll="ls -lah --color=auto"' >> /etc/bash.bashrc
 
 # pip
-ENV PIP_URL https://bootstrap.pypa.io/get-pip.py
-
-RUN wget $PIP_URL && python get-pip.py && rm get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && rm get-pip.py
 
 CMD ["bash"]
