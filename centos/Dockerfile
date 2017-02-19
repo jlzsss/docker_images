@@ -6,7 +6,7 @@ MAINTAINER LG <endoffight@gmail.com>
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup &&\
          curl -o /etc/yum.repos.d/CentOS-Base.repo https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3
 # update
-RUN yum update -y && yum install -y wget git &&\
+RUN yum update -y && yum install -y wget &&\
         yum groupinstall -y "Development Tools" &&\
         yum clean all &&\
         echo 'Asia/Shanghai' > /etc/timezone
