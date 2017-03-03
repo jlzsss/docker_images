@@ -4,7 +4,7 @@ MAINTAINER LaoGao <noreply@phpgao.com>
 ARG SS_VER=3.0.3
 ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
 ARG KCP_VER=20170303
-ARG KCP_URL=https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-linux-amd64-KCP_VER.tar.gz
+ARG KCP_URL=https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-linux-amd64-$KCP_VER.tar.gz
 
 
 ENV SERVER_ADDR 0.0.0.0
