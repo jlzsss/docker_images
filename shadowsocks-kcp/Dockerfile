@@ -71,8 +71,9 @@ CMD ss-server -s $SERVER_ADDR \
               --fast-open \
               -d $DNS_ADDR \
               -d $DNS_ADDR_2 \
-              -u && server_linux_amd64 \
-              -t "127.0.0.1:$SERVER_PORT" \
+              -u \
+              -f /tmp/ss.pid \
+              && server_linux_amd64 -t "127.0.0.1:$SERVER_PORT" \
               -l ":$KCP_LISTEN" \
               --mode $KCP_MODE \
               --crypt $KCP_ENCRYPT \
