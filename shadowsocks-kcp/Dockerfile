@@ -65,7 +65,7 @@ EXPOSE $KCP_LISTEN/udp
 
 CMD ss-server -s $SERVER_ADDR \
               -p $SERVER_PORT \
-              -k ${PASSWORD:-$(hostname)} \
+              -k $PASSWORD \
               -m $METHOD \
               -t $TIMEOUT \
               --fast-open \
@@ -75,6 +75,7 @@ CMD ss-server -s $SERVER_ADDR \
               -f /tmp/ss.pid \
               && server_linux_amd64 -t "127.0.0.1:$SERVER_PORT" \
               -l ":$KCP_LISTEN" \
+              -key $KCP_PASS \
               --mode $KCP_MODE \
               --crypt $KCP_ENCRYPT \
               --mtu $KCP_MUT
