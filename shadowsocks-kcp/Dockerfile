@@ -3,7 +3,7 @@ MAINTAINER LaoGao <noreply@phpgao.com>
 
 ARG SS_VER=3.0.4
 ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
-ARG KCP_VER=20170313
+ARG KCP_VER=20170315
 ARG KCP_URL=https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-linux-amd64-$KCP_VER.tar.gz
 
 
@@ -17,7 +17,7 @@ ENV DNS_ADDR_2  8.8.8.8
 ENV KCP_LISTEN  3824
 ENV KCP_PASS    jlz19821031
 ENV KCP_ENCRYPT aes-192
-ENV KCP_MODE    fast2
+ENV KCP_MODE    fast
 ENV KCP_MUT     1350
 
 
