@@ -9,7 +9,7 @@ ARG KCP_URL=https://github.com/xtaci/kcptun/releases/download/v$KCP_VER/kcptun-l
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 3721
-ENV PASSWORD    jlz13565852287
+ENV PASSWORD    shadowsocks
 ENV METHOD      aes-256-cfb
 ENV TIMEOUT     300
 ENV DNS_ADDR    8.8.8.8
@@ -17,7 +17,7 @@ ENV DNS_ADDR_2  8.8.4.4
 
 
 ENV KCP_LISTEN  3824
-ENV KCP_PASS    jlz19821031
+ENV KCP_PASS    kcptun
 ENV KCP_ENCRYPT aes-192
 ENV KCP_MODE    fast3
 ENV KCP_MUT     1350
